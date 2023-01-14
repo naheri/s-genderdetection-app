@@ -2,7 +2,6 @@ from flask import Flask,render_template,request
 import numpy as np
 from keras.models import load_model
 from keras.utils import img_to_array, load_img
-import cv2
 import os
 import os.path as op
 from werkzeug.utils import secure_filename
