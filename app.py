@@ -3,6 +3,7 @@ import numpy as np
 from keras.models import load_model
 from keras.utils import img_to_array, load_img
 import os
+from PIL import Image
 import os.path as op
 from werkzeug.utils import secure_filename
 
@@ -20,8 +21,9 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 loop_running = False
 
 def getPrediction(image_path):
-    img = load_img(image_path, target_size=(64, 64))
-    img = img_to_array(img)
+    image_path = f'static/images/{image_path}'
+    img = np.asarray(Image.open(image_path).resize((img_width, img_height)))
+    img = img/255
     img = np.expand_dims(img, axis=0)
     return 'female' if model.predict(img) == 0 else 'male'
 
