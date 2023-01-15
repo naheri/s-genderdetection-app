@@ -7,9 +7,10 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/image_response_style.css') }}">
     <title>response</title>
 </head>
-<body>
-    <h1>Model Response</h1>
-    <p>The person on the picture is more likely a <strong>{{gender}}</strong></p>
-    <img src="{{image_path}}" alt="image" >
-</body>
+    <body>
+        <h1>Model Response</h1>
+        <p>{{number_of_people}} people on the picture.</p>
+
+        <img src="{{image_path}}" alt="image" style="border-radius: 5px;">
+    </body>
 </html>
