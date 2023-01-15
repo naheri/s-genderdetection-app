@@ -1,7 +1,7 @@
 from flask import Flask,render_template,request
 import numpy as np
 from keras.models import load_model
-from keras.utils import img_to_array
+from keras.preprocessing.image import img_to_array
 import os
 import cv2
 import cvlib as cv
